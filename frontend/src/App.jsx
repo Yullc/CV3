@@ -18,7 +18,7 @@ function App() {
     return (
         <div style={{ maxWidth: '1000px', margin: '40px auto', padding: '0 20px', fontFamily: 'sans-serif' }}>
             <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '20px' }}>
-                14개 홈쇼핑 방송의 랭킹을 확인해보세요.
+                CV3 채용과제
             </h3>
 
             {/* 상단 유형 필터 버튼 */}
