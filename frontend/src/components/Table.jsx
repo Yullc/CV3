@@ -1,41 +1,70 @@
 import React from 'react';
 
-const Table = ({ data }) => {
+function Table({ data }) {
     return (
-        <div style={{ padding: '10px 0' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '14px' }}>
+        <div style={{ width: '100%', overflowX: 'auto' }}>
+            <table
+                style={{
+                    width: '100%',
+                    borderCollapse: 'collapse',
+                    tableLayout: 'fixed',
+                    fontSize: '13px'
+                }}
+            >
+                <colgroup>
+                    <col style={{ width: '5%' }} />
+                    <col style={{ width: '38%' }} />
+                    <col style={{ width: '17%' }} />
+                    <col style={{ width: '12%' }} />
+                    <col style={{ width: '7%' }} />
+                    <col style={{ width: '7%' }} />
+                    <col style={{ width: '7%' }} />
+                    <col style={{ width: '7%' }} />
+                </colgroup>
+
                 <thead>
-                    <tr style={{ borderBottom: '2px solid #333', color: '#666', padding: '12px 8px' }}>
-                        <th style={{ width: '60px', textAlign: 'center' }}>순위</th>
-                        <th>방송정보</th>
-                        <th>분류</th>
-                        <th>방송시간</th>
-                        <th>시청률</th>
-                        <th>판매량</th>
-                        <th>매출액</th>
-                        <th>상품수</th>
+                    <tr style={{ borderTop: '2px solid #333', borderBottom: '1px solid #ddd', color: '#666' }}>
+                        <th style={thStyle}>순위</th>
+                        <th style={{ ...thStyle, textAlign: 'left' }}>방송정보</th>
+                        <th style={{ ...thStyle, textAlign: 'left' }}>분류</th>
+                        <th style={thStyle}>방송시간</th>
+                        <th style={thStyle}>시청률</th>
+                        <th style={thStyle}>판매량</th>
+                        <th style={thStyle}>매출액</th>
+                        <th style={thStyle}>상품수</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     {data && data.length > 0 ? (
                         data.map((item, index) => (
-                            <tr key={item.id || index} style={{ borderBottom: '1px solid #eee' }}>
-                                <td style={{ textAlign: 'center', fontWeight: 'bold', color: '#ff9800', padding: '14px 8px' }}>
+                            <tr key={item.id || index} style={{ borderBottom: '1px solid #f0f0f0' }}>
+                                <td style={{ ...tdStyle, color: '#ff9900', fontWeight: 'bold' }}>
                                     {index + 1}
                                 </td>
-                                <td style={{ fontWeight: '500', padding: '14px 8px' }}>{item.title}</td>
-                                <td style={{ color: '#555', padding: '14px 8px' }}>{item.category}</td>
-                                <td style={{ color: '#555', padding: '14px 8px' }}>{item.broadcastTime}</td>
-                                <td style={{ padding: '14px 8px' }}>🔒 {item.views}</td>
-                                <td style={{ padding: '14px 8px' }}>🔒 {item.sales}</td>
-                                <td style={{ padding: '14px 8px' }}>🔒 {item.revenue}</td>
-                                <td style={{ padding: '14px 8px' }}>{item.productCount}</td>
+
+                                <td style={{ ...tdStyle, textAlign: 'left', fontWeight: '500' }} title={item.title}>
+                                    <div style={ellipsisStyle}>{item.title}</div>
+                                </td>
+
+                                <td style={{ ...tdStyle, textAlign: 'left', color: '#666' }} title={item.category}>
+                                    <div style={ellipsisStyle}>{item.category}</div>
+                                </td>
+
+                                <td style={{ ...tdStyle, color: '#666' }}>
+                                    {item.broadcastTime}
+                                </td>
+
+                                <td style={tdStyle}>{item.views}</td>
+                                <td style={tdStyle}>{item.sales}</td>
+                                <td style={tdStyle}>{item.revenue}</td>
+                                <td style={tdStyle}>{item.productCount}</td>
                             </tr>
                         ))
                     ) : (
                         <tr>
-                            <td colSpan="8" style={{ textAlign: 'center', padding: '40px 0', color: '#888' }}>
-                                불러올 데이터가 없습니다. 백엔드 서버가 켜져 있는지 확인해 주세요!
+                            <td colSpan="8" style={{ ...tdStyle, padding: '40px 0', color: '#999' }}>
+                                데이터가 없습니다.
                             </td>
                         </tr>
                     )}
@@ -43,6 +72,26 @@ const Table = ({ data }) => {
             </table>
         </div>
     );
+}
+
+const thStyle = {
+    padding: '12px 6px',
+    textAlign: 'center',
+    whiteSpace: 'nowrap',
+    fontWeight: '600'
+};
+
+const tdStyle = {
+    padding: '14px 6px',
+    textAlign: 'center',
+    verticalAlign: 'middle',
+    whiteSpace: 'nowrap'
+};
+
+const ellipsisStyle = {
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
 };
 
 export default Table;
