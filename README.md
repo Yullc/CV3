@@ -6,7 +6,7 @@ Windows 환경은 **Git Bash**, Mac 환경은 **터미널**을 이용해 아래 
 ```bash
 git clone https://github.com/Yullc/CV3
 ```
-IDEA를 이용해 프로젝트 열기.
+IDEA를 이용해 프로젝트 열기. (VsCode, intelliJ)
 
 ## 2. npm 설치 및 실행
 해당 IDEA 터미널에서 CV3 내부 프로젝트에 진입후 아래 명령어 입력
@@ -17,7 +17,7 @@ IDEA를 이용해 프로젝트 열기.
    ```
 
 ## 3. 백엔드 실행
-src->java->Cv3Application 클래스진입 후 실행버튼
+src->java->Cv3Application 클래스진입 후 실행 버튼 클릭
 
 ## 4. local 페이지 진입
 터미널에 나오는 로컬 주소로 들어가기(http://localhost:5173/)
