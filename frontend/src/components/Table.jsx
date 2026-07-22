@@ -112,9 +112,29 @@ function Table({ data }) {
                                         {item.broadcastTime}
                                     </td>
 
-                                    <td style={tdStyle}>{item.views}</td>
-                                    <td style={tdStyle}>{item.sales}</td>
-                                    <td style={tdStyle}>{item.revenue}</td>
+                                    {/* 💡 로그인 전: "🔒 로그인" 유지 / 로그인 후: 지우고 빈칸 처리 */}
+                                    <td style={tdStyle}>
+                                        {loggedInUser ? '' : (
+                                            <span style={{ color: '#888', cursor: 'pointer' }} onClick={() => setIsModalOpen(true)}>
+                                                🔒 로그인
+                                            </span>
+                                        )}
+                                    </td>
+                                    <td style={tdStyle}>
+                                        {loggedInUser ? '' : (
+                                            <span style={{ color: '#888', cursor: 'pointer' }} onClick={() => setIsModalOpen(true)}>
+                                                🔒 로그인
+                                            </span>
+                                        )}
+                                    </td>
+                                    <td style={tdStyle}>
+                                        {loggedInUser ? '' : (
+                                            <span style={{ color: '#888', cursor: 'pointer' }} onClick={() => setIsModalOpen(true)}>
+                                                🔒 로그인
+                                            </span>
+                                        )}
+                                    </td>
+
                                     <td style={tdStyle}>{item.productCount}</td>
                                 </tr>
                             ))
@@ -159,6 +179,7 @@ function Table({ data }) {
                                     onChange={(e) => setLoginPw(e.target.value)}
                                     placeholder="비밀번호를 입력하세요"
                                     style={inputStyle}
+                                    autoComplete="current-password"
                                     required
                                 />
                             </div>
