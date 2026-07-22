@@ -1,4 +1,5 @@
 package com.example.CV3.controller;
+
 import com.example.CV3.service.memberService;
 import com.example.CV3.vo.member;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,8 +16,8 @@ public class memberController {
 
     @PostMapping("/doLogin")
     public String doLogin(HttpServletRequest req,
-                          @RequestParam(required = false) String loginId,
-                          @RequestParam(required = false) String loginPw) {
+                          @RequestParam(name = "loginId", required = false) String loginId,
+                          @RequestParam(name = "loginPw", required = false) String loginPw) {
 
         if (loginId == null || loginId.trim().isEmpty()) {
             return "F-1: 아이디를 입력해주세요.";
