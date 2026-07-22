@@ -4,7 +4,7 @@
 Windows 환경은 **Git Bash**, Mac 환경은 **터미널**을 이용해 아래 명령어를 입력합니다.
 
 ```bash
-git clone [https://github.com/Yullc/CV3](https://github.com/Yullc/CV3)
+git clone https://github.com/Yullc/CV3
 ```
 IDEA를 이용해 프로젝트 열기.
 
@@ -24,7 +24,8 @@ IDEA를 이용해 프로젝트 열기.
 
 ## 5. 로그인 방법
 테이블 우측에 있는 로그인 버튼 클릭후
-id: test
+id: test,
 pw: test
 
-입력
+## 6. IntelliJ 사용시 빌드 오류 해결
+ settings 접속 -> Build,Executiom, Deployment -> Gradle -> Build and Run을 intelliJ IDEA로 변경
