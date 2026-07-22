@@ -4,6 +4,9 @@ VALUES ('첫 번째 라이브 방송', '패션/잡화', '2026-07-20 20:00', '1.2
 INSERT INTO `table` (title, category, broadcast_time, views, sales, revenue, product_count, type)
 VALUES ('두 번째 홈 화면 데이터', '전자기기', '2026-07-21 11:00', '5천', '40', '1,200,000', '1', 'HOME');
 
+INSERT INTO `member` (`loginId`, `password`, `name`)
+VALUES ('test', 'test', 'CV3');
+
 DELETE FROM `table`
 WHERE title IN ('첫 번째 라이브 방송', '두 번째 홈 화면 데이터');
 INSERT INTO `table` (title, category, broadcast_time, views, sales, revenue, product_count, type) VALUES

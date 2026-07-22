@@ -10,6 +10,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class member {
-    private Long loginId;
+    private int id;
+    private String loginId;
     private String password;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public Object getPassword() {
+        return password;
+    }
 }
