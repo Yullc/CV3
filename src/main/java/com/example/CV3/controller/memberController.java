@@ -1,5 +1,5 @@
 package com.example.CV3.controller;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.example.CV3.service.memberService;
 import com.example.CV3.vo.member;
 import jakarta.servlet.http.HttpServletRequest;
