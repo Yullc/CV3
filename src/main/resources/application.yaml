@@ -1,3 +1,10 @@
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
 spring:
   application:
     name: CV3
@@ -16,6 +23,7 @@ spring:
   sql:
     init:
       mode: always
+      encoding: UTF-8
 
 mybatis:
   mapper-locations: classpath:mappers/**/*.xml
