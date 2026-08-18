@@ -38,7 +38,6 @@ public class memberController {
 
         HttpSession session = req.getSession();
         session.setAttribute("loginedMember", member);
-        System.out.println("hello");
         return "S-1: " + member.getName() + "님 환영합니다!";
     }
 }

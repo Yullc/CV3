@@ -1,0 +1,10 @@
+[
+  {
+    "branchName": "main",
+    "root": true,
+    "createdAt": "2026-08-15T17:18:04.300+09:00",
+    "lastRequestedCommit": "cc9e17752f34f9677eafe4de8ae046b788914be6",
+    "lastRequestedAt": "2026-08-15T17:20:09.912+09:00",
+    "requestCount": 1
+  }
+]
